@@ -1,0 +1,177 @@
+/* 🌳 تنسيق السيكشن العام */
+.section-animals {
+  border: 3px solid #3f2b14;
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #3f2b14;
+  overflow: hidden;
+
+  /* 🤎 خلفية جريدينت بدرجات البني والبيج */
+  background: linear-gradient(
+    135deg,
+    #2b1d12 0%,
+    #4a2f16 25%,
+    #7a4b23 50%,
+    #b07b48 75%,
+    #d1b38b 100%
+  );
+  background-size: 400% 400%;
+  animation: gradientMove 15s ease infinite;
+}
+
+/* ✨ حركة الجريدينت */
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* عنوان السيكشن */
+.section-animals h2 {
+  color: #f8f3e7;
+  text-shadow: 2px 2px 6px #2a1b0d;
+  letter-spacing: 1px;
+}
+
+/* زرار الحيوان */
+.animal-btn {
+  border: none;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+  backdrop-filter: blur(6px);
+}
+
+.animal-btn:hover {
+  transform: scale(1.05);
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+/* صورة الحيوان */
+.animal-thumb {
+  width: 100%;
+  height: 160px;
+  object-fit: contain;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  margin-bottom: 10px;
+  border: 3px solid rgba(255, 255, 255, 0.25);
+}
+
+/* اسم الحيوان */
+.animal-name {
+  display: block;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #fdf7ec;
+  text-shadow: 1px 1px 3px #3b2412;
+}
+
+/* نافذة المودال */
+.animal-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  animation: fadeIn 0.4s ease forwards;
+}
+
+/* كارت التفاصيل */
+.modal-card {
+  background: #fdf6ee;
+  border-radius: 25px;
+  padding: 25px;
+  width: 90%;
+  max-width: 700px;
+  position: relative;
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.5);
+  animation: scaleUp 0.4s ease forwards;
+}
+
+/* زرار الإغلاق */
+.modal-close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  color: #4a2f16;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.modal-close:hover {
+  transform: rotate(90deg);
+}
+
+/* صورة المودال */
+.modal-img {
+  width: 250px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* النص داخل المودال */
+.modal-info h3 {
+  font-weight: bold;
+  color: #4a2f16;
+}
+
+.modal-info p {
+  color: #5c4025;
+  line-height: 1.7;
+}
+
+/* زر الصوت */
+.modal-controls .btn {
+  background-color: #7a4b23;
+  color: white;
+  border: none;
+  border-radius: 15px;
+  padding: 10px 25px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.modal-controls .btn:hover {
+  background-color: #9c6b3b;
+  transform: scale(1.05);
+}
+
+/* الحركات */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scaleUp {
+  from {
+    transform: scale(0.8);
+  }
+  to {
+    transform: scale(1);
+  }
+}
