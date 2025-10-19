@@ -42,20 +42,32 @@ function Section1() {
             textShadow: "1px 1px 4px #3f2b14",
           }}
         >
-          موقع تفاعلي لتعليم الأطفال أسماء الحيوانات وأصواتهم من خلال صور
-          وألعاب بسيطة، مع اختبار ممتع في النهاية 🎉
+          موقع تفاعلي لتعليم الأطفال أسماء الحيوانات وأصواتهم من خلال صور وألعاب
+          بسيطة، مع اختبار ممتع في النهاية 🎉
         </p>
 
         <button
           className="btn rounded-pill py-3 px-5"
-          href="#"
+          onClick={() => {
+            // تشغيل الصوت من فولدر public
+            const audio = new Audio(
+              process.env.PUBLIC_URL + "/sounds/background.mp3"
+            );
+            audio.play();
+
+            // سكرول ناعم إلى السيكشن 2
+            const section2 = document.getElementById("section2");
+            if (section2) {
+              section2.scrollIntoView({ behavior: "smooth" });
+            }
+          }}
           style={{
             backgroundColor: "#9c6b3b",
             border: "none",
             color: "white",
             fontWeight: "bold",
             boxShadow: "0 4px 10px rgba(0,0,0,0.3)",
-          }} 
+          }}
         >
           ابدأ الآن
         </button>
